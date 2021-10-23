@@ -1,6 +1,7 @@
 
 # Sticker Store 🌟🌟
 Sticker-Store-NFT-Using-Agoric
+![App Screenshot](https://raw.githubusercontent.com/NishikantaRay/Sticker-Store-NFT-Using-Agoric/master/Asset%2014%402x-100.jpg)
 ## Inspiration
 Whatsapp Stickers have become the most used asset. These have truly changed the style of communication with people. They have made Conversations more easier and engaging. To give a push to the sticker creators. As they are only getting credits but no money by making stickers. With this nft system, they can make some amount of money.
 ## What it does
