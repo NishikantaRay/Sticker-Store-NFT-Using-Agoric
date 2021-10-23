@@ -1,0 +1,29 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/examples/manifest_commodetto.json",
+		"$(MODULES)/drivers/destm32s/manifest.json"
+	],
+	"modules": {
+		"*": "./main"
+	},
+	"resources":{
+		"*-color": [
+			"./apple",
+			"./coke",
+			"./stormtrooper",
+			"./spiderman",
+			"./flowers"
+		]
+	},
+	"config": {
+		"screen": "destm32s",
+		"touch": ""
+	},
+	"defines": {
+		"destm32s": {
+			"width": 104,
+			"height": 212
+		}
+	}
+}

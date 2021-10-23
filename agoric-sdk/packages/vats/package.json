@@ -1,0 +1,71 @@
+{
+  "name": "@agoric/vats",
+  "version": "0.4.2",
+  "description": "Agoric's Vat library",
+  "type": "module",
+  "main": "./src/bootstrap.js",
+  "repository": "https://github.com/Agoric/agoric-sdk",
+  "scripts": {
+    "build": "exit 0",
+    "test": "ava",
+    "test:c8": "c8 $C8_OPTIONS ava --config=ava-nesm.config.js",
+    "test:xs": "exit 0",
+    "pretty-fix": "prettier --write '**/*.js'",
+    "pretty-check": "prettier --check '**/*.js'",
+    "lint-fix": "yarn lint:eslint --fix && yarn lint:types",
+    "lint-check": "yarn lint",
+    "lint": "yarn lint:types && yarn lint:eslint",
+    "lint:types": "tsc -p jsconfig.json",
+    "lint:eslint": "eslint '**/*.js'"
+  },
+  "keywords": [],
+  "author": "Agoric",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@agoric/assert": "^0.3.14",
+    "@agoric/dapp-svelte-wallet": "^0.11.5",
+    "@agoric/ertp": "^0.12.2",
+    "@agoric/eventual-send": "^0.13.30",
+    "@agoric/import-bundle": "^0.2.31",
+    "@agoric/install-ses": "^0.5.28",
+    "@agoric/marshal": "^0.4.28",
+    "@agoric/nat": "^4.1.0",
+    "@agoric/notifier": "^0.3.31",
+    "@agoric/pegasus": "^0.4.5",
+    "@agoric/promise-kit": "^0.2.28",
+    "@agoric/same-structure": "^0.1.28",
+    "@agoric/sharing-service": "^0.1.31",
+    "@agoric/sparse-ints": "^0.1.24",
+    "@agoric/store": "^0.6.6",
+    "@agoric/swingset-vat": "^0.23.0",
+    "@agoric/treasury": "^0.6.5",
+    "@agoric/wallet-backend": "^0.10.5",
+    "@agoric/zoe": "^0.20.0"
+  },
+  "devDependencies": {
+    "@agoric/babel-parser": "^7.6.4",
+    "ava": "^3.12.1",
+    "c8": "^7.7.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@agoric"
+    ]
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=11.0"
+  },
+  "ava": {
+    "files": [
+      "test/**/test-*.js"
+    ],
+    "timeout": "20m"
+  }
+}

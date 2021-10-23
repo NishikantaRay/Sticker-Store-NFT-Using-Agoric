@@ -1,0 +1,67 @@
+{
+  "name": "@agoric/swingset-runner",
+  "version": "0.17.2",
+  "private": true,
+  "description": "Application to launch SwingSet instances for development and testing",
+  "type": "module",
+  "main": "./src/main.js",
+  "repository": "https://github.com/Agoric/agoric-sdk",
+  "author": "Agoric",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "exit 0",
+    "test": "ava",
+    "test:c8": "c8 $C8_OPTIONS ava --config=ava-nesm.config.js",
+    "test:xs": "exit 0",
+    "lint-fix": "eslint --fix '**/*.js'",
+    "lint-check": "yarn lint",
+    "lint": "eslint '**/*.js'",
+    "ci:autobench": "./autobench.js"
+  },
+  "dependencies": {
+    "@agoric/assert": "^0.3.14",
+    "@agoric/babel-standalone": "^7.14.3",
+    "@agoric/bundle-source": "^2.0.0",
+    "@agoric/ertp": "^0.12.2",
+    "@agoric/eventual-send": "^0.13.30",
+    "@agoric/install-ses": "^0.5.28",
+    "@agoric/marshal": "^0.4.28",
+    "@agoric/nat": "^4.1.0",
+    "@agoric/same-structure": "^0.1.28",
+    "@agoric/stat-logger": "^0.4.24",
+    "@agoric/swing-store": "^0.6.2",
+    "@agoric/swingset-vat": "^0.23.0",
+    "@agoric/tame-metering": "^2.0.14",
+    "@agoric/zoe": "^0.20.0",
+    "expose-gc": "^1.0.0",
+    "n-readlines": "^1.0.1",
+    "node-lmdb": "^0.9.5",
+    "yargs": "^16.1.0"
+  },
+  "devDependencies": {
+    "ava": "^3.12.1",
+    "c8": "^7.7.2",
+    "import-meta-resolve": "^1.1.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@agoric"
+    ]
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true
+  },
+  "eslintIgnore": [
+    "bundle-*.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "ava": {
+    "files": [
+      "test/**/test-*.js"
+    ],
+    "timeout": "2m"
+  }
+}

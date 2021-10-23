@@ -1,0 +1,44 @@
+{
+  "name": "@agoric/stat-logger",
+  "version": "0.4.24",
+  "description": "Simple library for logging and graphing performance statistics",
+  "type": "module",
+  "main": "src/index.js",
+  "repository": "https://github.com/Agoric/agoric-sdk",
+  "author": "Agoric",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "exit 0",
+    "test": "exit 0",
+    "test:xs": "exit 0",
+    "lint-check": "yarn lint",
+    "lint-fix": "eslint --fix '**/*.js'",
+    "lint": "eslint '**/*.js'"
+  },
+  "peerDependencies": {
+    "canvas": "^2.6.1",
+    "vega": "^5.10.0",
+    "vega-canvas": "^1.2.1"
+  },
+  "devDependencies": {
+    "ava": "^3.12.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "ava": {
+    "files": [
+      "test/**/test-*.js"
+    ],
+    "timeout": "2m"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@agoric"
+    ]
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true
+  }
+}

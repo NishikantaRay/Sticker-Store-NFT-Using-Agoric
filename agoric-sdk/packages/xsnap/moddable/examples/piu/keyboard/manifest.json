@@ -1,0 +1,33 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/examples/manifest_piu.json",
+		"$(MODULES)/input/keyboard/manifest.json"
+	],
+	"creation":{
+		"stack":350
+	},
+	"modules": {
+		"*": [
+			"./main"
+		]
+	},
+	"resources":{
+		"*-alpha": [
+			"$(MODDABLE)/examples/assets/fonts/OpenSans-Regular-20",
+			"$(MODDABLE)/examples/assets/fonts/OpenSans-Semibold-18"
+		]
+	},
+	"platforms": {
+		"esp": {
+			"config": {
+				"rotation": 90
+			}
+		},
+		"esp32": {
+			"config": {
+				"rotation": 90
+			}
+		}
+	}
+}

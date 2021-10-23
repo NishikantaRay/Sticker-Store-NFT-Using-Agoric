@@ -1,0 +1,25 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/examples/manifest_net.json",
+		"$(MODDABLE)/examples/manifest_piu.json",
+		"$(MODDABLE)/modules/files/preference/manifest.json"
+	],
+	"modules": {
+		"*": "./main"
+	},
+	"resources":{
+		"*-alpha": [
+			"./digits"
+		]
+	},
+	"bundle": {
+		"id": "tech.moddable.countdown",
+		"devices": [
+			"esp/moddable_one",
+			"com.moddable.two"
+		],
+		"icon": "./store/icon.png",
+		"custom": "./store/custom"
+	}
+}

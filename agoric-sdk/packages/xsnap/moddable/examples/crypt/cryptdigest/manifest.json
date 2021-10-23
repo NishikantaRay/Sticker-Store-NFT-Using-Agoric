@@ -1,0 +1,13 @@
+{
+	"include": "$(MODDABLE)/examples/manifest_base.json",
+	"modules": {
+		"*": [
+			"./main",
+			"$(MODULES)/crypt/digest/*",
+			"$(MODULES)/crypt/digest/kcl/*",
+			"$(MODULES)/crypt/arith/*",
+			"$(MODULES)/crypt/bin/*",
+			"$(MODULES)/data/base64/*"
+		]
+	}
+}

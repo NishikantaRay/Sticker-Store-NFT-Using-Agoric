@@ -1,0 +1,38 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/examples/manifest_piu.json"
+	],
+	"config": {
+		"rotation": 90
+	},
+	"modules": {
+		"*": "./main"
+	},
+	"resources":{
+		"*": [
+			"./strings/*",
+			"./settings"
+		],
+		"*-mask": [
+			"$(MODDABLE)/examples/assets/fonts/OpenSans-Regular-24"
+		]
+	},
+	"platforms": {
+		"mac": {
+			"config": {
+				"rotation": 0
+			}
+		},
+		"win": {
+			"config": {
+				"rotation": 0
+			}
+		},
+		"lin": {
+			"config": {
+				"rotation": 0
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/examples/manifest_net.json",
+		"$(MODDABLE)/examples/manifest_commodetto.json"
+	],
+	"modules": {
+		"commodetto/Bitmap": "$(COMMODETTO)/commodettoBitmap",
+		"commodetto/Poco": "$(COMMODETTO)/commodettoPoco",
+		"commodetto/*": "$(COMMODETTO)/commodettoPocoBlit",
+		"commodetto/PixelsOut": "$(COMMODETTO)/commodettoPixelsOut",
+		"*": [
+			"./main",
+			"./bmpSpooler",
+			"$(MODULES)/network/http/*"
+		]
+	},
+	"preload": [
+		"commodetto/*",
+		"http"
+	]
+}

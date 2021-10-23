@@ -1,0 +1,52 @@
+{
+	"modules": {
+		"commodetto/Bitmap": "$(COMMODETTO)/commodettoBitmap",
+		"commodetto/Poco": "$(COMMODETTO)/commodettoPoco",
+		"commodetto/*": "$(COMMODETTO)/commodettoPocoBlit",
+		"commodetto/cfe": "$(COMMODETTO)/cfeBMF",
+		"commodetto/parseBMP": "$(COMMODETTO)/commodettoParseBMP",
+		"commodetto/parseRLE": "$(COMMODETTO)/commodettoParseRLE",
+		"piu/*": "$(PIU)/All/piu*",
+		"piu/CombTransition": "$(PIU)/MC/piuCombTransition",
+		"piu/MC": "$(PIU)/MC/piuMC",
+		"piu/WipeTransition": "$(PIU)/MC/piuWipeTransition",
+		"*": [
+			  "$(PIU)/MC/piuDie",
+			  "$(PIU)/MC/piuFont",
+			  "$(PIU)/MC/piuImage",
+			  "$(PIU)/MC/piuRegion",
+			  "$(PIU)/MC/piuTexture",
+			  "$(PIU)/MC/piuView"
+		]
+	},
+	"preload": [
+		"commodetto/*",
+		"piu/*"
+	],
+	"platforms":{
+		"esp": {
+			"modules": {
+				"setup/piu": "$(BUILD)/devices/esp/setup/piu"
+			},
+			"preload": "setup/piu"
+		},
+		"esp32": {
+			"modules": {
+				"setup/piu": "$(BUILD)/devices/esp32/setup/piu"
+			},
+			"preload": "setup/piu"
+		},
+		"gecko": {
+			"modules": {
+				"setup/piu": "$(BUILD)/devices/gecko/setup/piu"
+			},
+			"preload": "setup/piu"
+		},
+		"qca4020": {
+			"modules": {
+				"setup/piu": "$(BUILD)/devices/qca4020/setup/piu"
+			},
+			"preload": "setup/piu"
+		}
+	}
+}

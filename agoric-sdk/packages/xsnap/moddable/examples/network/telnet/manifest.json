@@ -1,0 +1,68 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/examples/manifest_net.json",
+		"$(MODDABLE)/examples/manifest_commodetto.json"
+	],
+	"modules": {
+		"*": [
+			"./main",
+			"$(MODULES)/network/telnet/*"
+		],
+		"cli": "$(MODULES)/base/cli/cli",
+		"cli/pixelsout": "$(MODULES)/base/cli/commands/pixelsout",
+		"cli/xs": "$(MODULES)/base/cli/commands/xs"
+	},
+	"preload": [
+		"main",
+		"telnet",
+		"cli/*"
+	],
+	"platforms": {
+		"mac": {
+			"include": [
+				"$(MODDABLE)/modules/files/file/manifest.json"
+			],
+			"modules": {
+				"cli/files": "$(MODULES)/base/cli/commands/files"
+			}
+		},
+		"esp": {
+			"include": [
+				"$(MODDABLE)/modules/files/file/manifest.json",
+				"$(MODULES)/pins/digital/manifest.json",
+				"$(MODDABLE)/modules/pins/i2c/manifest.json"
+			],
+			"modules": {
+				"pins/digital": "$(MODULES)/pins/digital/digital",
+				"pins/smbus": "$(MODULES)/pins/smbus/smbus",
+				"cli/digital": "$(MODULES)/base/cli/commands/digital",
+				"cli/esp": "$(MODULES)/base/cli/commands/esp/esp",
+				"cli/files": "$(MODULES)/base/cli/commands/files",
+				"cli/i2c": "$(MODULES)/base/cli/commands/i2c",
+				"cli/network": "$(MODULES)/base/cli/commands/network"
+			},
+			"preload": [
+				"pins/*"
+			]
+		},
+		"esp32": {
+			"include": [
+				"$(MODDABLE)/modules/files/file/manifest.json",
+				"$(MODULES)/pins/digital/manifest.json",
+				"$(MODDABLE)/modules/pins/i2c/manifest.json"
+			],
+			"modules": {
+				"pins/digital": "$(MODULES)/pins/digital/digital",
+				"pins/smbus": "$(MODULES)/pins/smbus/smbus",
+				"cli/digital": "$(MODULES)/base/cli/commands/digital",
+				"cli/files": "$(MODULES)/base/cli/commands/files",
+				"cli/i2c": "$(MODULES)/base/cli/commands/i2c",
+				"cli/network": "$(MODULES)/base/cli/commands/network"
+			},
+			"preload": [
+				"pins/*"
+			]
+		}
+	}
+}

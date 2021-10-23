@@ -1,0 +1,31 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/examples/manifest_piu.json",
+		"$(MODULES)/input/color-picker/manifest.json"
+	],
+    "creation": {
+        "stack": 350
+    },
+	"modules": {
+		"*": [
+			"./main"
+		]
+	},
+	"resources":{
+		"*-alpha": [
+			"$(MODDABLE)/examples/assets/fonts/OpenSans-Light-42"
+		]
+	},
+	"bundle": {
+	    "id": "tech.moddable.color-picker",
+	    "devices": [
+	        "wasm",
+	        "esp/moddable_one",
+	        "esp/moddable_display_1",
+	        "esp32/moddable_two",
+	        "esp32/moddable_display_2"
+	    ],
+	    "icon": "./store/icon.png"
+	}
+}

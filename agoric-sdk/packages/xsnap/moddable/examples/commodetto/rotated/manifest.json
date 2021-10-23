@@ -1,0 +1,16 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/examples/manifest_commodetto.json"
+	],
+	"config": {
+		"rotation": 90
+	},
+	"modules": {
+		"*": "./main"
+	},
+	"resources": {
+		"*-color": "./delmar",
+		"*-mask": "$(MODDABLE)/examples/assets/fonts/OpenSans-Semibold-18"
+	}
+}

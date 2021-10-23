@@ -1,0 +1,31 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/examples/manifest_piu.json"
+	],
+	"modules": {
+		"*": [
+			"./main",
+			"./check"
+		]
+	},
+	"preload": [
+		"check"
+	],
+	"resources":{
+		"*": [
+			"./island"
+		],
+		"*-mask": [
+			"./led-dim",
+			"./led-bright"
+		]
+	},
+	"bundle": {
+		"id": "tech.moddable.backlight",
+		"devices": [
+			"esp32/moddable_two",
+			"esp32/moddable_display_2"
+		]
+	}
+}

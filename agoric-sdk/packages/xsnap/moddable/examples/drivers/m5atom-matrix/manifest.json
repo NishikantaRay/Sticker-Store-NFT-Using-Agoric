@@ -1,0 +1,15 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json"
+	],
+	"modules": {
+		"*": "./main"
+	},
+	"bundle": {
+		"id": "tech.moddable.m5atom-matrix",
+		"devices": [
+			"esp32/m5atom_matrix"
+		],
+		"icon": "./icon.png"
+	}
+}

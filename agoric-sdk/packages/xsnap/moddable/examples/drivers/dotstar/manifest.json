@@ -1,0 +1,20 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/examples/manifest_commodetto.json",
+		"$(MODULES)/drivers/dotstar/manifest.json"
+	],
+	"modules": {
+		"*": "./main"
+	},
+	"resources":{
+		"*-color": [
+			"./lights"
+		]
+	},
+	"defines": {
+		"dotstar": {
+			"brightness": 64
+		}
+	}
+}

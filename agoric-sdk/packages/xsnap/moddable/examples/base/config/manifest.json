@@ -1,0 +1,15 @@
+{
+	"include": "$(MODDABLE)/examples/manifest_base.json",
+	"modules": {
+		"*": [
+			"./main",
+			"./echo"
+		]
+	},
+	"preload": "echo",
+	"config": {
+		"sntp": "pool.ntp.org",
+		"threshold": 0.8,
+		"echoModuleSpecifier": "echo"
+	}
+}

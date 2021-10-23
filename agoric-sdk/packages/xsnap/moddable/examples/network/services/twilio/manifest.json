@@ -1,0 +1,27 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/examples/manifest_net.json",
+		"$(MODDABLE)/modules/crypt/tls.json"
+	],
+	"modules": {
+		"*": [
+			"./main",
+			"$(MODULES)/network/http/*",
+			"$(MODULES)/data/base64/*"
+		]
+	},
+	"preload": [
+		"http",
+		"base64"
+	],
+	"config": {
+		"sntp": "pool.ntp.org"
+	},
+    "resources": {
+        "*": [
+            "$(MODULES)/crypt/data/ca106"
+        ]
+    }
+}
+

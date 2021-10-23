@@ -1,0 +1,13 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/modules/base/instrumentation/manifest.json"
+	],
+	"modules": {
+		"*": [
+		  "./main",
+		  "$(MODULES)/base/debug/*"
+		]
+	},
+	"preload": "debug"
+}

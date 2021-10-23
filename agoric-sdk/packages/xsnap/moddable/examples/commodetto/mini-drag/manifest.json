@@ -1,0 +1,25 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/examples/manifest_commodetto.json"
+	],
+	"modules": {
+		"*": "./main"
+	},
+	"resources": {
+		"*-mask": "$(MODDABLE)/examples/assets/fonts/OpenSans-Regular-20",
+		"*-color": "./desktop",
+		"*": "./button"
+	},
+	"platforms": {
+		"mac": {
+			"error": "example not for simulator, device only"
+		},
+		"win": {
+			"error": "example not for simulator, device only"
+		},
+		"lin": {
+			"error": "example not for simulator, device only"
+		}
+	}
+}

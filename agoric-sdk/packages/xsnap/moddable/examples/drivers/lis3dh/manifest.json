@@ -1,0 +1,15 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODULES)/pins/smbus/manifest.json"
+	],
+	"modules": {
+		"*": [
+			"./main",
+			"$(MODULES)/drivers/lis3dh/*"
+		]
+	},
+	"preload": [
+		"lis3dh"
+	]
+}

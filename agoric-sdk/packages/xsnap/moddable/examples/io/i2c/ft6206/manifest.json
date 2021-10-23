@@ -1,0 +1,12 @@
+{
+	"include": [
+		"$(MODDABLE)/modules/io/manifest.json"
+	],
+	"modules": {
+		"*": "./main",
+		"embedded:sensor/touch/FT6x06": "./ft6206"
+	},
+	"preload": [
+		"embedded:sensor/touch/FT6x06"
+	]
+}

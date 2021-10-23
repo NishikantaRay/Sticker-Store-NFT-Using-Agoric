@@ -1,0 +1,50 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/examples/manifest_net.json",
+		"$(MODDABLE)/examples/manifest_piu.json",
+		"$(MODULES)/input/keyboard/manifest.json"
+	],
+	"config": {
+		"ssid": "Moddable",
+		"password": "12345678",
+		"sntp": false
+	},
+	"creation":{
+		"stack":350
+	},
+	"modules": {
+		"*": [
+			"./main",
+			"$(MODULES)/network/websocket/*",
+			"$(MODULES)/data/base64/*",
+			"$(MODULES)/data/logical/*",
+			"$(MODULES)/crypt/digest/*",
+			"$(MODULES)/crypt/digest/kcl/*"
+		]
+	},
+	"preload": [
+		"websocket",
+		"base64",
+		"digest",
+		"logical"
+	],
+	"resources":{
+		"*-alpha": [
+			"./fonts/OpenSans-Regular-20",
+			"./fonts/OpenSans-Semibold-18"
+		]
+	},
+	"platforms": {
+		"esp": {
+			"config": {
+				"rotation": 90
+			}
+		},
+		"esp32": {
+			"config": {
+				"rotation": 90
+			}
+		}
+	}
+}

@@ -1,0 +1,99 @@
+{
+  "name": "@agoric/zoe",
+  "version": "0.20.0",
+  "description": "Zoe: the Smart Contract Framework for Offer Enforcement",
+  "type": "module",
+  "main": "./src/zoeService/zoe.js",
+  "engines": {
+    "node": ">=11.0"
+  },
+  "scripts": {
+    "build": "yarn build-zcfBundle",
+    "test": "ava --verbose",
+    "test:c8": "c8 $C8_OPTIONS ava --config=ava-nesm.config.js",
+    "test:unit": "ava 'test/unitTests/**/test-*.js' -T 1m --verbose",
+    "test:swingset": "ava 'test/swingsetTests/**/test-*.js' -T 10m --verbose",
+    "test:xs": "yarn test:xs-unit",
+    "test:xs-unit": "ava-xs --verbose",
+    "test:xs-worker": "SWINGSET_WORKER_TYPE=xs-worker ava -c 2 'test/swingsetTests/**/test-*.js'",
+    "build-zcfBundle": "node scripts/build-zcfBundle.js",
+    "lint-fix": "yarn lint:eslint --fix && yarn lint:types",
+    "lint-check": "yarn lint",
+    "lint": "yarn lint:types && yarn lint:eslint",
+    "lint:eslint": "eslint '**/*.js'",
+    "lint:types": "tsc -p jsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agoric/agoric-sdk.git"
+  },
+  "keywords": [
+    "smart",
+    "contract",
+    "cryptocurrency",
+    "exchange",
+    "tokens"
+  ],
+  "author": "Agoric",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Agoric/agoric-sdk/issues"
+  },
+  "homepage": "https://github.com/Agoric/agoric-sdk#readme",
+  "dependencies": {
+    "@agoric/assert": "^0.3.14",
+    "@agoric/bundle-source": "^2.0.0",
+    "@agoric/ertp": "^0.12.2",
+    "@agoric/eventual-send": "^0.13.30",
+    "@agoric/import-bundle": "^0.2.31",
+    "@agoric/marshal": "^0.4.28",
+    "@agoric/nat": "^4.1.0",
+    "@agoric/notifier": "^0.3.31",
+    "@agoric/promise-kit": "^0.2.28",
+    "@agoric/same-structure": "^0.1.28",
+    "@agoric/store": "^0.6.6",
+    "@agoric/swingset-vat": "^0.23.0"
+  },
+  "devDependencies": {
+    "@agoric/babel-standalone": "^7.14.3",
+    "@agoric/install-ses": "^0.5.28",
+    "ava": "^3.12.1",
+    "c8": "^7.7.2",
+    "ses": "^0.14.3"
+  },
+  "files": [
+    "bundles/",
+    "src/",
+    "tools/",
+    "contractFacet.js",
+    "exported.js",
+    "NEWS.md"
+  ],
+  "ava-xs": {
+    "exclude": [
+      "# We use SWINGSET_WORKER_TYPE=xs ava to run these...",
+      "swingsetTests"
+    ]
+  },
+  "ava": {
+    "files": [
+      "test/**/test-*.js"
+    ],
+    "timeout": "20m"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@agoric"
+    ]
+  },
+  "eslintIgnore": [
+    "bundle-*.js"
+  ],
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

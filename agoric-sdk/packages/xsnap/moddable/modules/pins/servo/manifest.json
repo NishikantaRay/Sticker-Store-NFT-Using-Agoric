@@ -1,0 +1,38 @@
+{
+	"build": {
+		"ARDUINO_ESP8266": "$(USERHOME)/esp/esp8266-2.3.0/"
+	},
+	"platforms":{
+		"esp": {
+			"modules": {
+				"pins/servo": "$(MODULES)/pins/servo/servo",
+				"*": [
+					"$(MODULES)/pins/servo/esp/*",
+					"$(ARDUINO_ESP8266)/libraries/Servo/src/esp8266/*",
+					"$(ARDUINO_ESP8266)/libraries/Servo/src/*"
+				]
+			},
+			"preload": [
+				"pins/servo"
+			]
+		},
+		"esp32": {
+			"modules": {
+				"pins/servo": "$(MODULES)/pins/servo/servo",
+				"*": "$(MODULES)/pins/servo/esp32/*"
+			},
+			"preload": [
+				"pins/servo"
+			]
+		},
+		"esp32/kaluga": {
+			"error": "pins/servo module is unsupported on esp32s2"
+		},
+		"mac": {
+			"modules": {
+				"pins/servo": "$(MODULES)/pins/servo/servo",
+				"*": "$(MODULES)/pins/servo/sim/*"
+			}
+		}
+	}
+}

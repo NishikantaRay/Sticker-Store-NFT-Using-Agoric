@@ -1,0 +1,20 @@
+{
+	"include": [
+		"$(MODDABLE)/modules/pins/i2c//manifest.json",
+		"$(MODDABLE)/modules/files/preference//manifest.json"
+	],
+	"defines": {
+		"ft6206": {
+			"width": 240,
+			"height": 320,
+			"hz": 600000,
+			"flipX": true,
+			"flipY": true,
+			"threshold": 32
+		}
+	},
+	"modules": {
+		"*": "$(MODULES)/drivers/ft6206/*"
+	},
+	"preload": "ft6206"
+}

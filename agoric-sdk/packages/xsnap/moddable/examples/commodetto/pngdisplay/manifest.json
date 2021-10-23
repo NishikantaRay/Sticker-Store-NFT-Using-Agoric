@@ -1,0 +1,39 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/examples/manifest_net.json",
+		"$(MODDABLE)/examples/manifest_commodetto.json",
+		"$(MODDABLE)/modules/network/mdns/manifest.json"
+	],
+	"modules": {
+		"*": [
+			"./main",
+			"$(MODULES)/network/http/*",
+			"$(COMMODETTO)/miniz"
+		],
+		"commodetto/PNG": "$(COMMODETTO)/commodettoReadPNG",
+		"commodetto/BufferOut": "$(COMMODETTO)/commodettoBufferOut",
+		"commodetto/Convert": "$(COMMODETTO)/commodettoConvert",
+		"commodetto/PixelsOut": "$(COMMODETTO)/commodettoPixelsOut"
+	},
+	"preload": [
+		"http",
+		"commodetto/*",
+		"main"
+	],
+	"config": {
+		"touch": ""
+	},
+	"bundle": {
+	    "id": "tech.moddable.pngdisplay",
+	    "devices": [
+	        "esp32/moddable_two",
+	        "esp32/moddable_display_2",
+	        "esp32/m5stack",
+	        "esp32/m5stack_core2",
+	        "esp32/m5stack_fire"
+	    ],
+	    "custom": "./store/custom"
+	}
+}
+

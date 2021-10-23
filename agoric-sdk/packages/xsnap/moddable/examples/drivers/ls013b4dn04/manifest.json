@@ -1,0 +1,60 @@
+{
+	"include" : [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODULES)/drivers/ls013b4dn04/manifest.json"
+	],
+	"config": {
+		"screen": "ls013b4dn04",
+		"touch": ""
+	},
+	"resources": {
+		"*": [
+			"./moddable-white"
+		]
+	},
+	"defines": {
+		"ls013b4dn04": {
+			"width": 96,
+			"height": 96,
+			"hz": 3500000
+		}
+	},
+	"modules": {
+		"commodetto/Poco": "$(COMMODETTO)/commodettoPoco",
+		"commodetto/*": "$(COMMODETTO)/commodettoPocoBlit",
+		"commodetto/parseBMF": "$(COMMODETTO)/commodettoParseBMF",
+		"commodetto/parseBMP": "$(COMMODETTO)/commodettoParseBMP",
+		"commodetto/Bitmap": "$(COMMODETTO)/commodettoBitmap",
+		"Resource": "$(MODDABLE)/modules/files/resource/Resource",
+		"*": "./main"
+	},
+	"preload": [
+		"commodetto/*",
+		"Resource",
+		"main"
+	],
+	"strip":"*",
+	"platforms": {
+		"gecko": {
+			"modules": {
+				"*": [
+                    "$(MODULES)/base/instrumentation/*",
+					"$(BUILD)/devices/gecko/sleep/*"
+				]
+			},
+			"preload": [
+				"instrumentation",
+				"pins",
+				"spi",
+				"sleep"
+			]
+		},
+		"gecko/giant": {
+			"defines": {
+				"sleep": {
+					"retention": { "memory": true }
+				}
+			}
+		}
+	}
+}

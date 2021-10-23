@@ -1,0 +1,32 @@
+{
+	"build": {
+		"SERIAL": "$(MODDABLE)/contributed/serial"
+	},
+	"include": [
+		"$(MODULES)/pins/digital/manifest.json"
+	],
+	"modules": {
+		"serial": "$(SERIAL)/serial"
+	},
+	"preload": "serial",
+	"platforms": {
+		"esp": {
+			"modules": {
+				"*": "$(SERIAL)/esp/*"
+			}
+		},
+		"esp32": {
+			"modules": {
+				"*": "$(SERIAL)/esp32/*"
+			}
+		},
+		"gecko": {
+			"modules": {
+				"*": "$(SERIAL)/gecko/*"
+			}
+		},
+		"...": {
+			"error": "serial unsupported"
+		}
+	}
+}

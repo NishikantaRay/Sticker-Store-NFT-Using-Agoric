@@ -1,0 +1,36 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODULES)/pins/digital/manifest.json",
+		"$(MODULES)/pins/digital/monitor/manifest.json"
+	],
+	"modules": {
+		"*": [
+			"./main"
+		]
+	},
+	"platforms": {
+		"esp": {
+			"config": {
+				"led1_pin": 2,
+				"button1_pin": 0
+			}
+		},
+		"esp32": {
+			"config": {
+				"led1_pin": 2,
+				"button1_pin": 0
+			}
+		},
+		"qca4020": {
+			"config": {
+				"led1_pin": 12,
+				"led2_pin": 13,
+				"button1_pin": 23
+			}
+		},
+		"...": {
+			"error": "need button and led pins"
+		}
+	}
+}

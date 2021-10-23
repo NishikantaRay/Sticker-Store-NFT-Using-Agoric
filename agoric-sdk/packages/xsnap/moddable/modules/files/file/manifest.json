@@ -1,0 +1,91 @@
+{
+	"modules": {
+		"*": "$(MODULES)/files/file/*"
+	},
+	"preload": "file",
+	"platforms": {
+		"esp": {
+			"modules": {
+				"*": "$(MODULES)/files/file/esp/*"
+			},
+			"config": {
+				"file": {
+					"root": "/spiffs/"
+				}
+			}
+		},
+		"esp32": {
+			"modules": {
+				"*": "$(MODULES)/files/file/esp32/*"
+			},
+			"config": {
+				"file": {
+					"root": "/mod/"
+				}
+			}
+		},
+		"mac": {
+			"modules": {
+				"*": "$(MODULES)/files/file/mac/*"
+			},
+			"config": {
+				"file": {
+					"root": "/Users/Shared/"
+				}
+			}
+		},
+		"x-cli-mac": {
+			"modules": {
+				"*": "$(MODULES)/files/file/mac/*"
+			},
+			"config": {
+				"file": {
+					"root": "/Users/Shared/"
+				}
+			}
+		},
+		"win": {
+			"modules": {
+				"*": "$(MODULES)/files/file/win/*"
+			},
+			"config": {
+				"file": {
+					"root": "./"
+				}
+			}
+		},
+		"lin": {
+			"modules": {
+				"*": "$(MODULES)/files/file/lin/*"
+			},
+			"config": {
+				"file": {
+					"root": "/tmp/"
+				}
+			}
+		},
+		"qca4020": {
+			"modules": {
+				"*": "$(MODULES)/files/file/qca4020/*"
+			},
+			"config": {
+				"file": {
+					"root": "/spinor/"
+				}
+			}
+		},
+		"wasm": {
+			"modules": {
+				"*": "$(MODULES)/files/file/lin/*"
+			},
+			"config": {
+				"file": {
+					"root": "/tmp/"
+				}
+			}
+		},
+		"...": {
+			"error": "File module unsupported"
+		}
+	}
+}

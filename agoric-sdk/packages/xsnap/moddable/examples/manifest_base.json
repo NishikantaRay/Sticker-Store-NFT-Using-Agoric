@@ -1,0 +1,75 @@
+{
+	"build": {
+		"BUILD": "$(MODDABLE)/build",
+		"MODULES": "$(MODDABLE)/modules",
+		"COMMODETTO": "$(MODULES)/commodetto",
+		"PIU": "$(MODULES)/piu"
+	},
+	"creation": {
+		"static": 32768,
+		"chunk": {
+			"initial": 1536,
+			"incremental": 512
+		},
+		"heap": {
+			"initial": 512,
+			"incremental": 64
+		},
+		"stack": 256,
+		"keys": {
+			"available": 32,
+			"name": 53,
+			"symbol": 3
+		},
+		"parser": {
+			"buffer": 1024,
+			"table": 17
+		},
+		"main": "main"
+	},
+	"modules": {
+		"*": [
+			"$(MODULES)/files/resource/*",
+			"$(MODULES)/base/instrumentation/modInstrumentation"
+		]
+	},
+	"preload": [
+		"Resource"
+	],
+	"strip": "*",
+	"platforms": {
+		"esp": {
+			"include": "$(BUILD)/devices/esp/manifest.json",
+			"modules": {
+				"*": [
+					"$(MODULES)/files/preference/esp/*",
+					"$(MODULES)/network/socket/lwip/modLwipSafe"
+				]
+			}
+		},
+		"esp32": {
+			"include": "$(BUILD)/devices/esp32/manifest.json",
+			"modules": {
+				"*": "$(MODULES)/network/socket/lwip/modLwipSafe"
+			}
+		},
+		"gecko": {
+			"include": "$(BUILD)/devices/gecko/manifest.json"
+		},
+		"qca4020": {
+			"include": "$(BUILD)/devices/qca4020/manifest.json"
+		},
+		"lin": {
+			"include": "$(BUILD_SIMULATOR)/manifest.json"
+		},
+		"mac": {
+			"include": "$(BUILD_SIMULATOR)/manifest.json"
+		},
+		"win": {
+			"include": "$(BUILD_SIMULATOR)/manifest.json"
+		},
+		"wasm": {
+			"include": "$(BUILD_SIMULATOR)/manifest.json"
+		}
+	}
+}

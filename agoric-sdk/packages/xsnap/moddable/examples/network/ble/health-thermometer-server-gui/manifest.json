@@ -1,0 +1,38 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/examples/manifest_piu.json",
+		"$(MODDABLE)/modules/network/ble/manifest_server.json"
+	],
+	"modules": {
+		"*": [
+			"./main",
+			"./htmservice"
+		]
+	},
+	"preload": [
+		"htmservice"
+	],
+	"ble":{
+		"*": [
+			"./bleservices/*"
+		]
+	},
+	"resources": {
+		"*-mask": [
+			"./assets/dot",
+			"./assets/sm-bt-logo",
+			"./assets/ticks-arc",
+			"$(MODDABLE)/examples/assets/fonts/OpenSans-Regular-18",
+			"$(MODDABLE)/examples/assets/fonts/OpenSans-Regular-72"
+		],
+		"*-color": [
+			"./assets/color-arc"
+		]
+	},
+	"platforms": {
+		"gecko/blue": {
+			"error": "application not supported on this platform"
+		}
+	}
+}

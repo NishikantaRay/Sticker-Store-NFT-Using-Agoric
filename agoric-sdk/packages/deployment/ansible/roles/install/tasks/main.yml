@@ -1,0 +1,7 @@
+---
+
+- name: Create service
+  template:
+    src: systemd.service.j2
+    dest: "/etc/systemd/system/{{service}}.service"
+  notify: reload services
